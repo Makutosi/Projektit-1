@@ -12,20 +12,20 @@
   <h1>Kirjaudu</h1>
   <input type="text" name=""placeholder="Anna Käyttäjänimi"id="username">
   <input type="password" name=""placeholder="Anna Salasana" id="password">
-  <input type="submit" name="" value="Login" onclick="validate()">
+  <input type="submit" name="" value="Login" onclick="checkRadio();checkCheckBox();checkText();validate()">
 </form>
 
 <form>
   <h4>Millainen tietokoneen käyttäjä olet?</h4>
   <input type="radio" id="user" name="user" value="user">
   <label for="user">Suurkäyttäjä</label><br>
-  <input type="radio" id="student" name="student" value="student">
+  <input type="radio" id="student" name="user" value="student">
   <label for="student">Käytän ainoastaan opiskeluun</label><br>
-  <input type="radio" id="none" name="none" value="none">
+  <input type="radio" id="none" name="user" value="none">
   <label for="none">En käytä tietokonetta ollenkaan</label><br>
 </form>
 
-<form>
+<form id="checkbox">
   <h4>Mitä mieltä olet sivustamme tähän asti?</h4>
   <input type="checkbox" id="fabulous" name="fabulous" value="fabulous">
   <label for="fabulous">Todella hienot </label><br>
@@ -48,9 +48,9 @@
 
 <form>
   <h4>Ideoita, miten kehittäisit tätä sivustoa?</h4>
-  <textarea name="message" rows="10" cols="30"></textarea>
+  <textarea name="message" rows="10" cols="30" id="textarea"></textarea>
   <br><br>
-  <input type="submit" name="" value="Login" onclick="validate()">
+  <input type="submit" id="btn" name="" value="Login" onclick="checkRadio();checkCheckBox();checkText();validate()">
 </form>
   </body>
 </html>
