@@ -1,4 +1,4 @@
-/*Projekti 1A kirjautumislomake CSS-osuus/tämä on vielä kesken../ Eriko Korhonen*/
+/*Projekti 1A kirjautumislomake CSS-osuus/valmis versio/ Eriko Korhonen*/
 @charset "utf-8";
 *,*::before, *::after{
 box-sizing: border-box;
@@ -10,10 +10,10 @@ body{
   width: 100%;
   margin: 50px auto;
   color: white;
-  background-color:#6868c0;    /*Vaihdoin taustaväriä hieman vaaleammaksi, jotta pystyin kokeilemaan toimivuutta, AIEMPI VÄRI:#000033 - RIKU, vielä versio3 #000033-Eriko*/
+  background-color:#6868c0;    /*Vaihdoin taustaväriä hieman vaaleammaksi, jotta pystyin kokeilemaan toimivuutta, AIEMPI VÄRI:#000033 - RIKU */
   padding: 20px;
-  border: 2px solid #008000;
-  border-radius: 5px;
+  border: 4px solid #008000;
+  border-radius: 10px;
   /*background:url();
   background-size: cover;*/
 }
@@ -21,6 +21,7 @@ body{
 h1{
   font-family: "Brush Script MT", cursive;
   font-size: 40px;
+  text-align: center;
   border-bottom: dotted 1px #4caf50;
   margin-bottom: 50px;
   padding: 40px;
