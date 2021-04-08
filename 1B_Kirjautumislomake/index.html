@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1B-Kyselylomake</title>  
-    <link rel="stylesheet" href="styles.css">               <!--CSS-->
+    <title>1B-Kyselylomake</title>
+    <link rel="stylesheet" href="1BStyle.css">               <!--CSS-osio lisätty Paul Willman-->
     <script type="text/javascript" src=""></script>         <!--JAVASCRIPT-->
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <input type="text" name="ika" id="ikasyotto" placeholder="Syötä ikäsi..."><br>         <!--Jos käyttäjä syöttää muun kuin numeron = virheilmoitus-->
 
                 <p>Sukupuoli:</p>
-                <input type="radio" name="myradio" id="nainen" checked>
+                <input type="radio" name="myradio" id="nainen">                                         <!-- poistin checked osion, jolloin mitään radio buttonia ei ole etukäteen valittu, pieni muutos Paul Willman-->
                 <label for="nainen">Nainen</label>
                 <input type="radio" name="myradio" id="mies">
                 <label for="mies">Mies</label>
@@ -40,9 +40,10 @@
                 <label for="auto">Auto</label><br>
                 <input type="checkbox" name="none" id="none">
                 <label for="none">En mitään näistä</label><br><br>
-            
+
                 <label for="matkustus">Mikä on ensisijainen tapasi matkustaa?</label><br>
-                <select name="matkustus" id="matkustus">
+                <select name="matkustus" id="pudotus">                                                 <!-- Muutin ID:n "pudotus", koska se oli ohjeissa vaatimuksena dropbox lomakkeelle, pieni muutos Paul Willman--> 
+                    <option disabled selected value> -- Kuinka matkustat? -- </option>                 <!-- Default valinta dropboxille, jota ei pysty valitsemaan siitä pois siirryttyään, pieni lisäys Paul Willman-->
                     <option value="kävely">Kävely</option>
                     <option value="polkupyörä">Polkupyörä</option>
                     <option value="mopo">Mopo</option>
