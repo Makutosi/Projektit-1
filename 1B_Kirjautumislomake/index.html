@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1B-Kyselylomake</title>
+    <link rel="stylesheet" href="1BStyle.css">               <!--CSS-osio lisätty Paul Willman-->
+    <script type="text/javascript" src=""></script>         <!--JAVASCRIPT-->
+</head>
+<body>
+    <div class="content">
+        <div class="headline">
+            <h1 id="otsikko">Kyselylomake</h1>
+            <p id="kuvaus">Täytä tämä lyhyt kysely:</p>
+        </div>
+        <div class="form-container">
+            <form id="kyselylomake"action="/action_page.php">
+                <label for="nimi">Nimi:</label><br>
+                <input type="text" name="nimi" id="nimisyotto" placeholder="Syötä nimesi..."><br>       <!--Jos nimi on liian lyhyt = virheilmoitus-->
+                <label for="email">Sähköposti:</label><br>
+                <input type="text" name="email" id="emailsyotto" placeholder="Syötä email..."><br>     <!--Sähköposti on oltava muotoiltu oikein, muuten = virheilmoitus-->
+                <label for="ika">Ikä:</label><br>
+                <input type="text" name="ika" id="ikasyotto" placeholder="Syötä ikäsi..."><br>         <!--Jos käyttäjä syöttää muun kuin numeron = virheilmoitus-->
+
+                <p>Sukupuoli:</p>
+                <input type="radio" name="myradio" id="nainen">                                         <!-- poistin checked osion, jolloin mitään radio buttonia ei ole etukäteen valittu, pieni muutos Paul Willman-->
+                <label for="nainen">Nainen</label>
+                <input type="radio" name="myradio" id="mies">
+                <label for="mies">Mies</label>
+                <input type="radio" name="myradio" id="muu">
+                <label for="muu">Muu</label><br><br>
+
+                <p>Valitse, jos omistat jonkun seuraavista:</p>
+                <input type="checkbox" name="pyora" id="pyora">
+                <label for="pyora">Polkupyörä</label><br>
+                <input type="checkbox" name="mopo" id="mopo">
+                <label for="mopo">Mopo</label><br>
+                <input type="checkbox" name="auto" id="auto">
+                <label for="auto">Auto</label><br>
+                <input type="checkbox" name="none" id="none">
+                <label for="none">En mitään näistä</label><br><br>
+
+                <label for="matkustus">Mikä on ensisijainen tapasi matkustaa?</label><br>
+                <select name="matkustus" id="pudotus">                                                 <!-- Muutin ID:n "pudotus", koska se oli ohjeissa vaatimuksena dropbox lomakkeelle, pieni muutos Paul Willman--> 
+                    <option disabled selected value> -- Kuinka matkustat? -- </option>                 <!-- Default valinta dropboxille, jota ei pysty valitsemaan siitä pois siirryttyään, pieni lisäys Paul Willman-->
+                    <option value="kävely">Kävely</option>
+                    <option value="polkupyörä">Polkupyörä</option>
+                    <option value="mopo">Mopo</option>
+                    <option value="auto">Auto</option>
+                    <option value="julkiset">Julkinen liikenne</option>
+                    <option value="muu">Muu</option>
+                </select><br><br>
+
+                <label for="palaute">Palautetta kyselystä:</label><br>
+                    <textarea name="palaute" id="palaute" cols="40" rows="10" placeholder="Anna palautetta..."></textarea><br>
+                <input type="submit" value="Submit" id="laheta">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

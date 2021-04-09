@@ -1,67 +1,52 @@
-/*Projekti 1A kirjautumislomake CSS-osuus*/
+/*Projekti 1A kirjautumislomake CSS-osuus/valmis versio/ Eriko Korhonen*/
+@charset "utf-8";
+*,*::before, *::after{
+box-sizing: border-box;
+}
 
 body{
-  margin: 0;
-  padding: 0;
-  font-family: Garamond, serif;/*font-family:sans-serif; */
-  background-color:#000033
+  font-size: 20px;
+  max-width: 500px;
+  width: 100%;
+  margin: 50px auto;
+  color: white;
+  background-color:#6868c0;    /*Vaihdoin taustaväriä hieman vaaleammaksi, jotta pystyin kokeilemaan toimivuutta, AIEMPI VÄRI:#000033 - RIKU */
+  padding: 20px;
+  border: 4px solid #008000;
+  border-radius: 10px;
   /*background:url();
   background-size: cover;*/
 }
 
-
-.box{
-  width: 300px;
-  padding: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(to bottom, #000066 0%, #000099 100%);/*kokeilu*/
+h1{
+  font-family: "Brush Script MT", cursive;
+  font-size: 40px;
   text-align: center;
-
-.box h1
-{
-  color: white;
-  text-transform: uppercase;
-  font-weight: 700;
+  border-bottom: dotted 1px #4caf50;
+  margin-bottom: 50px;
+  padding: 40px;
 }
 
-.box input[type="text"], .box input[type="password"]
-{
+h4{
+  font-weight: bold;
+}
+
+input[type= "checkbox"]:checked + label {/*valittu muuttuu punaiseksi*/
+  color: red;
+}
+
+input[type='submit']{
+  background: #4caf50;
   border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 3px solid #0367fd;
-  padding: 14px 10px;
-  width: 220px;
-  outline: none;
   color: white;
-  border-radius: 24px;
-  transition: 0.25px;
-}
-.box input[type="text"]:focus, .box input[type="password"]:focus{
-  width: 270px;
-  border-color: : #ffc400ec;
-}
-
-.box input[type="submit"]{
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 3px solid #ffc400ec;
-  padding: 14px 35px;
-  outline: none;
-  color: white;
-  border-radius: : 24px;
-  transition: 0.25px;
+  padding: 10px 15px;
   cursor: pointer;
+  font-size: 14px;
 }
 
-.box input[type="submit"]:hover{
-  background: #ffc400ec;
+input[type='submit']:hover{
+  background-color: #66ff99;
 }
+
+
+
