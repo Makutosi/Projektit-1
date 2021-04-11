@@ -30,7 +30,7 @@ if(emailIsValid(sahkoposti)) {
 
  //ika tarkastus
  var ika = document.getElementById("ikasyotto").value;
-   if( nimi = texti)//?
+   if(ikasyotto.isNaN(ika)) //?
    {
      message.innerHTML = "Numero ei määriteltävissä";
      return false;
