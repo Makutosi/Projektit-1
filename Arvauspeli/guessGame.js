@@ -1,43 +1,61 @@
+//Projekti 2: Arvauspeli/Javascript-osuus/Paul Willman/16.4.2021//
 
+(function () {
+    //Määritetään muuttujat, joita funktio tarvitsee toimiakseen.
+    var guessesLeft, randomNumber, guessInput, submitButton, answerDisplay, maxGuesses;
 
-const randomNum = Math.floor(Math.random() * 10)+1;    //Math.random antaa meille randomilla luvun, kunhan se on kerrottu tarvittavalla lukumäärällä ja Math.floor pitää huolta että se pysyy kokonaislukuna.
-var no_of_guesses = 0;
-var maxGuesses = 3;
-var guessed_nums = [];
+    maxGuesses = 3;
 
-function play()
-{
-  var msg1 = document.getElementById('message1');
-  var msg2 = document.getElementById('message2');
-  var msg3 = document.getElementById('message3');
-  var user_guess = document.getElementById('guess').value;
-  if (user_guess < 0 || user_guess > 10 )
-  {
-    alert("Valitse numero 0 - 10 välillä");
-  }
-  else
-  {
-    guessed_nums.push(user_guess);
-    no_of_guesses+= 1;
+    //Ladataan kaikki elementit DOM:mista etukäteen
+    //jotta sitä ei tarvitse tehdä joka kerta, kun tarkistamme vastauksen
+    guessInput = document.getElementById("guess");
+    submitButton = document.getElementById("submitAnswer");
 
-    if (user_guess < randomNum)
-    {
-      msg1.textContent = "Vastauksesi on liian pieni.";
-      msg2.textContent = "Vastaustesi määrä: " + no_of_guesses;
-      msg3.textContent = "Arvatut numerosi ovat: " + guessed_nums;
+    //Käytetään DIV-elementtiä kertomaan vastaus
+    answerDisplay = document.getElementById("answer");
+
+    answerDisplay.innerHTML = "Arvaa lukuni kolmella yrityksellä!";
+
+    submitButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        checkAnswer();
+    });
+
+    //Alustetaan peli
+    initGame();
+
+    function initGame () {
+        guessesLeft = maxGuesses;
+        randomNumber = Math.floor(Math.random() * 10 + 1);
+        guessInput.value = "";
     }
-    else if (user_guess > randomNum)
-    {
-      msg1.textContent = "Vastauksesi on liian korkea.";
-      msg2.textContent = "Vastaustesi määrä: " + no_of_guesses;
-      msg3.textContent = "Arvatut numerosi ovat: " + guessed_nums;
+
+//Tarkistetaan ja vertaillaan pelaajan antamaa vastausta ehtoihin
+    function checkAnswer () {
+
+        //funktio tarkistaa ensin vastasitko oikein, jos kyllä, se pysähtyy tähän.
+        if (guessInput.value == randomNumber) {
+            answerDisplay.innerHTML = "Sinä voitit! " + randomNumber + " on oikein. " +
+                "Laita uusi veikkaus aloittaaksesi pelin uudelleen. Muista, että sinulla on kolme yritystä arvata lukuni!";
+            initGame();
+            return;
+        }
+        //Jos ei, funktio tarkistaa menitkö veikkauksessasi yli oikean vastauksen. Jos kyllä, se pysähtyy tähän.
+        else if (guessInput.value > randomNumber) {
+            answerDisplay.innerHTML = "Liian korkea!";
+        }
+        //Muussa tapauksessa funktio ymmärtää veikkauksen olleen liian alhainen ja se pysähtyy tähän.
+        else {
+            answerDisplay.innerHTML = "Liian matala!";
+        }
+        //Jokainen pelaajan veikkaus vähentää yhden kokonaisveikkaus määrästä, mitä pelaaja voi tehdä per peli.
+        guessesLeft -= 1;
+        //Jos kaikki 3 veikkausta meni pieleen, käynnistää funktio tämän osuuden ja lopettaa pelin, pyytäen samalla aloittamaan uuden.
+        if (guessesLeft === 0) {
+            answerDisplay.innerHTML += " Nyt loppui arvaukset - Sinä hävisit! Veikkaa uudelleen aloittaaksesi uuden pelin. Muista, että sinulla on kolme yritystä arvata lukuni!";
+            initGame();
+        }
     }
-    else if (user_guess == randomNum)
-    {
-      msg1.textContent = "Upeata! Arvasit oikein!";
-      msg2.textContent = "Numero oli: " + randomNum;
-      msg3.textContent = "Arvasit sen: " + no_of_guesses + " yrityksellä";
-      document.getElementById('my_btn').disabled = true;
-    }
-  }
-}
+
+}());
