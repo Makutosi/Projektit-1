@@ -103,6 +103,7 @@ button {
    
  .purple:hover:before {
    background-position: left bottom;
+   cursor: pointer;
  }
 
  /*answer-divin stylet*/
