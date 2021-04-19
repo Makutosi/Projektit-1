@@ -1,4 +1,4 @@
-/*Projekti 1B kirjautumislomake CSS-osuus/alustava versio/ Paul Willman*/
+/*Projekti 1B kirjautumislomake CSS-osuus/ Paul Willman*/
 @charset "utf-8";
 *{
 box-sizing: border-box;
@@ -36,7 +36,7 @@ body{
   border-radius: 10px;
 }
 
-h1{
+h1{                                         /*Kaikki h1 otsikot saavat nämä tyylittely asetukset*/
   font-family: "Times New Roman";
   font-size: 40px;
   text-align: center;
@@ -45,19 +45,31 @@ h1{
   padding: 40px;
 }
 
-h4{
+h4{                                         /*Kaikki h4 otsikot ovat lihavoituja*/
   font-weight: bold;
 }
 
-input[type= "radio"]:checked + label {/*valittu muuttuu punaiseksi*/
+textarea{                                   /*textarea:n tyylittely asetukset*/
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+input[type= "radio"]:checked + label {      /*valittu muuttuu punaiseksi*/
   color: red;
 }
 
-input[type= "checkbox"]:checked + label {/*valittu muuttuu punaiseksi*/
+input[type= "checkbox"]:checked + label {   /*valittu muuttuu punaiseksi*/
   color: red;
 }
 
-input[type='submit']{
+input[type='submit']{                       /*submit nappulan tyylittely asetukset*/
   background: #4caf50;
   border: 0;
   color: black;
@@ -66,6 +78,6 @@ input[type='submit']{
   font-size: 14px;
 }
 
-input[type='submit']:hover{
+input[type='submit']:hover{                 /*Kun siirrät cursorin submit nappulan päälle, muuta väriä*/
   background-color: #66ff99;
 }
