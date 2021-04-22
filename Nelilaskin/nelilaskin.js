@@ -13,6 +13,7 @@ let dis2Num = '';
 let result = null;
 let lastOperation = '';
 
+//Numeropainikkeille click event, tarkistaa myös onko pistettä painettu vai ei.
 numbersEl.forEach(number => {
     number.addEventListener('click', (e)=> {
         if(e.target.innerText === '.' && !haveDot) {
@@ -25,7 +26,7 @@ numbersEl.forEach(number => {
         display2.innerText = dis2Num;
     })
 });
-
+//Funktio operaattoreille. Käynnistää mathOperationin jos on kaksi eri lukua sekä laskuoperaattori painettu. Muuttaa stringinä saadun arvon floatiksi ja sijoittaa sen muuttujaan result.
 operations.forEach(operation => {
     operation.addEventListener('click', (e) =>{
         if(!dis2Num) return;
@@ -49,7 +50,7 @@ function clearVar(name = '') {
     dis2Num = '';
     tempResult.innerText = result;
 }
-
+//Laskufunktio joka määrittää ehdot lastOperationille. parseFloat muuntaa stringinä saadut arvot numeroiksi.
 function mathOperation(){
     if(lastOperation === '*') {
         result = parseFloat(result) * parseFloat(dis2Num);
@@ -63,7 +64,7 @@ function mathOperation(){
         result = parseFloat(result) % parseFloat(dis2Num);
     }
 }
-
+//Yhtäsuurikuin-painikkeen click event.
 equals.addEventListener('click', (e) =>{
     if(!dis1Num || !dis2Num) return;
     haveDot=false;
@@ -74,7 +75,7 @@ equals.addEventListener('click', (e) =>{
     dis2Num = result;
     dis1Num = '';
 });
-
+//C-painikkeen click-event. Alustaa laskimen.
 clear.addEventListener('click', (e)=>{
     display1.innerText = '0';
     display2.innerText = '0';
@@ -84,7 +85,7 @@ clear.addEventListener('click', (e)=>{
     tempResult.innerText = '';
     result = '';
 })
-
+//CE-painikkeen click-event. Ei vielä toimi jostain syystä.
 clearLast.addEventListener('click', (e) =>{
     display2.innerText = '';
     dis2Num = '';
