@@ -28,7 +28,7 @@ numbersEl.forEach(number => {
 
 operations.forEach(operation => {
     operation.addEventListener('click', (e) =>{
-        if(!dis2Num) result;
+        if(!dis2Num) return;
         haveDot = false;
         const operationName = e.target.innerText;
         if(dis1Num && dis2Num && lastOperation) {
@@ -64,3 +64,28 @@ function mathOperation(){
     }
 }
 
+equals.addEventListener('click', (e) =>{
+    if(!dis1Num || !dis2Num) return;
+    haveDot=false;
+    mathOperation();
+    clearVar();
+    display2.innerText = result;
+    tempResult.innerText = '';
+    dis2Num = result;
+    dis1Num = '';
+});
+
+clear.addEventListener('click', (e)=>{
+    display1.innerText = '0';
+    display2.innerText = '0';
+    haveDot=false;
+    dis1Num = '';
+    dis2Num = '';
+    tempResult.innerText = '';
+    result = '';
+})
+
+clearLast.addEventListener('click', (e) =>{
+    display2.innerText = '';
+    dis2Num = '';
+});
