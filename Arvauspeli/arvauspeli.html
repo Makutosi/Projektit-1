@@ -1,10 +1,13 @@
 <!--Arvauspeli/HTML-osuus/Eriko Korhonen/13.4.2021-->
+<!--tämä toimii/Eriko Korhonen/20.4.2021-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Arvauspeli</title>
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="arvaus.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=RocknRoll+One&display=swap" rel="stylesheet">
     <script type="text/javascript"></script>
   </head>
 
@@ -14,12 +17,16 @@
     <h3>Ajattelen numeroa, joka on välillä 1-10.</h3>
     <h3>Voitko arvata sen?</h3>
 
-    <input type="text" placeholder="Num" id= "guess"><br>
-    <button onclick="play()" id="my_btn">Go!</button>
+    <input type="text" placeholder="Num" id="guess"><br>
+    <button class="purple" id="submitAnswer">Go!</button>
 
-    <p id="message1">Arvausien määrä: 0</p>
+    <p id="message1">Veikkauksia jäljellä: 3</p>  <!--Pieni muutos message kohtiin ja ne toimivat nyt Javascriptissä. /Paul Willman -->
     <p id="message2">Arvatut numerot ovat: None</p>
-    <p id="message3"></p>
+
+    <div id="answer"></div>
+
+    <script type="text/javascript" src="guessGame.js"></script>  <!--Javascript-osion toimivuuden kannalta script täytyy olla tässä vaiheessa koodia normaalin head osion sijasta. Muokkaus Paul Willman-->
+   <!--Syy tälle on ohjelman osien aktivoitumisjärjestys, kun ohjelman käynnistää.-->
    </div>
   </body>
 </html>

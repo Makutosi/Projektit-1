@@ -1,0 +1,110 @@
+/*Projekti/3_Nelilaskin/CSS-osuus/Eriko Korhonen/20.4.2021*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: cursive;
+}
+
+section{
+  background-color: #E0E0E0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 90%;
+  max-width: 400px;
+  background-color: blue;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.display{
+  background-color: aqua;
+  height: 100px;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  font-size: 30px;
+  position: relative;
+}
+
+.display-1{
+  opacity: 0.4;
+  font-size: 20px;
+  height: 28px;
+  overflow: hidden;
+}
+
+.temp-result{
+  position: absolute; /*vasemman puolen yläosassa*/
+  bottom: 0;
+  left: 10;
+  font-size: 20px;
+  opacity: 0.4;
+}
+
+.all_buttons{  /* alaviiva*/   
+  color: black;
+  display: grid;
+  grid-template: repeat(4,1fr) / repeat(4,1fr);/* numerot ja merkit paikoille*/
+}
+
+.button{
+  border: .5px solid rgba(92, 92, 92, 0.137);/* näppäimien neliä reunus*/
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center; /*numerot ja merkit näppäimien keskelle*/
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover{
+  background: linear-gradient(to bottom, #00ff99 0%,#00ffff 100%);
+  border-radius: 44px;
+}
+
+.btn-0{
+  grid-column: 1/3; /*nollalle kahden näppäimen tila*/
+                    /*ruudukon sarake välillä 1-3*/
+}
+
+/* Universal Selector(*) valitsee kaikki sivun HTML-elementit.
+*{padding:0; margin:0;} poistetaan oletusmarginaalit ja -täytteet dokumentista
+box-sizing-ominaisuudella voi muuttaa laatikkomallin oletustoimintatapaa.
+box-sizing: border-box sisällyttää rajan ja välistyksen mukaan elementin kokoon
+
+section
+display: flex;  elementit vasemmalla rinnakkain
+min-height:100vh; tehdään rungon korkeudesta vähintään sama kuin näyttöalue
+ Yksi vh (1vh) on sama asia kuin 1% sivun käytettävissä olevasta korkeudesta.
+align-items: center; keskitetty  <-> align-items:stretch;
+justfy-content:center;  vaakasuoraan keskelle
+
+container
+width:90%; max-width:400px; leveys ei kasva enään 400px:stä
+border-radius: kulmien pyöristys
+overflow:hidden; estetään merkkien ylivuoto
+
+display
+tulostusikkuna
+position:absolute; määrittää absoluuttinen sijainti
+left, bottom määrittää kuinka kaukana lähtöpisteestä
+opacity: määrittää elementin läpinäkyvyys,
+        0 läpinäkyvämpi, 1 läpinäkymäätömämpi
+
+.all_buttons
+display:grid; tarjoaa ruudukkopohjaisen asettelujärjestelmän
+grid template: reapeat
+            joustava yksikkö,fr(fraction) määrittää ruudukoiden jakaamisen suhteen
+            1fr 1fr 1fr 1fr = repeat(4,1fr)*/
