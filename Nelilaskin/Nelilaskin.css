@@ -37,9 +37,9 @@ section{
 }
 
 .display-1{
-  opacity: .4;
+  opacity: 0.4;
   font-size: 20px;
-  height: 20px;
+  height: 28px;
   overflow: hidden;
 }
 
@@ -48,7 +48,7 @@ section{
   bottom: 0;
   left: 10;
   font-size: 20px;
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .all_buttons{  /* alaviiva*/   
@@ -71,7 +71,7 @@ section{
 
 .button:hover{
   background: linear-gradient(to bottom, #00ff99 0%,#00ffff 100%);
-  border-radius: 50px;
+  border-radius: 44px;
 }
 
 .btn-0{
