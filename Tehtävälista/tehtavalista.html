@@ -15,13 +15,20 @@
         <h2>Tehtävälista</h2>
     </header>
         <form>
-        <input type="text" id="lista-input" class="no-outline">
-        <button class="lista-button" type="submit">
-            <i class="fas fa-plus-square"></i>
+        <input type="text" id="lista-input" class="no-outline">    <!--Käyttäjän syöttämä tehtävä-->
+        <button class="lista-button" type="submit">                <!--Nappi joka lisää tehtävän listaan (käynnistää funktiot) -->
+            <i class="fas fa-plus-square"></i>                     <!--Napissa käytetty kuvaketta joka on otettu font-awesome.css tiedostosta. Linkattu yläpuolella.-->
         </button>
         </form>
-        <div class="lista-container">
-            <ul class="tehtava-lista"></ul>
+        <div class="lista-container">                   
+            <ul class="tehtava-lista"></ul>             
+            
+<!--         Javascriptilla lisätään elementtejä tähän UL:ään document.createElement ja appendChild-metodeilla.         -->
+<!--         Alhaalla esimerkki mitä pitäisi tapahtua kun "lista-button" klikataan.
+        
+            <li class="lista-item"></li>
+            <button class="check-btn"></button>
+            <button class="delete-btn"></button>        -->
         </div>
     <script type="text/javascript" src="tehtavalista.js"></script>
 </body>
