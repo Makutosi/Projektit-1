@@ -5,7 +5,7 @@ const tempResult = document.querySelector('.temp-result');
 const operations = document.querySelectorAll('.operation');
 const equals = document.querySelector('.equal');
 const clear = document.querySelector('.all-clear');
-const clearLast = document.querySelector('.last-entity.clear');
+const clearLast = document.querySelector('.last-entity-clear');
 
 let haveDot = false;
 let dis1Num = '';
