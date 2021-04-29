@@ -13,7 +13,7 @@
 <form class="box" action="login.html" method="post">
   <h1>Kirjaudu</h1>
   <input type="text" name=""placeholder="Anna Käyttäjänimi"id="username">
-  <input type="password" name=""placeholder="Anna Salasana" id="password">
+  <input type="password" name="pw"placeholder="Anna Salasana" id="password">
 </form>
 
 <!--lomake, joka kysyy millainen olet tietkoneen käyttäjänä radio painike tyylillä.-->
@@ -56,7 +56,7 @@
   <h4>Ideoita, miten kehittäisit tätä sivustoa?</h4>
   <textarea name="message" rows="10" cols="30" id="textarea"></textarea>
   <br><br>
-  <input type="submit" id="btn" name="" value="Login" onclick="checkRadio();checkCheckBox();checkText();validate()">
+  <input type="submit" id="btn" name="" value="Login" onclick="validation();pwCheck()">
 </form>
   </body>
 </html>
