@@ -32,6 +32,7 @@ submitButton = document.getElementById("submitAnswer");
 
     function initGame () {
         guessesLeft = maxGuesses;
+        guessTable = [];
         msg1.textContent = "Veikkauksia jäljellä: " + guessesLeft;
         msg2.textContent = "Arvatut numerosi ovat: None";
         randomNumber = Math.floor(Math.random() * 10 + 1);
