@@ -28,12 +28,16 @@ body{
   max-width: 500px;
   width: 100%;
   margin: 50px auto;
-  color: white;
+  justify-content: center;
   background-color:#242582;
   color:yellow;
-  padding: 20px;
-  border: 4px solid #008000;
-  border-radius: 10px;
+}
+
+.content{
+    background-image: linear-gradient(120deg, #004e92, #000428);
+    padding: 15px;
+    border: 4px solid #008000;
+    border-radius: 15px;
 }
 
 h1{                                         /*Kaikki h1 otsikot saavat nämä tyylittely asetukset*/
@@ -55,7 +59,7 @@ textarea{                                   /*textarea:n tyylittely asetukset*/
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
@@ -76,6 +80,7 @@ input[type='submit']{                       /*submit nappulan tyylittely asetuks
   padding: 10px 15px;
   cursor: pointer;
   font-size: 14px;
+  border-radius: 15px;
 }
 
 input[type='submit']:hover{                 /*Kun siirrät cursorin submit nappulan päälle, muuta väriä*/
