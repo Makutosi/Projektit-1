@@ -1,4 +1,4 @@
-//Projekti/3_Tehtävälista/CSS-osuus/Eriko Korhonen/26.4.2021
+//Projekti/3_Tehtävälista/JS-osuus/Eriko Korhonen/26.4.2021
 //Tämä on vielä kesken/28.-30.4.2021
 //Selectors
 const listaInput = document.querySelector(".lista-input");
@@ -18,7 +18,7 @@ function addLista(event)
   //console.log('hei');
 
   //Prevent form from submitting
-  event.preventDefault();}
+  event.preventDefault();
 
  //Todo DIV ->
   const todoDiv = document.createElement("div");
@@ -84,10 +84,10 @@ function filterTodo(e)
 //  console.log(todos);
    todos.forEach(function(todo)
   {
-  switch (e.target.value)// select>option>value
+  switch (e.target.value)// select>option>value "all"
    {
     case "all":
-     todo.style.display = "flex";
+     todo.style.display = "flex";  //block
      break;
     case "completed":
       if(todo.classList.contains("completed"))
@@ -100,7 +100,7 @@ function filterTodo(e)
       }
       break;
     case "uncompleted":
-      if(todo.classList.contains('completed'))
+      if(todo.classList.contains("completed"))
       {
       todo.style.display = "flex";
       }
