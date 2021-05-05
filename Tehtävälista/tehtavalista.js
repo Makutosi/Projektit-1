@@ -1,37 +1,45 @@
 //Projekti/3_Tehtävälista/JS-osuus/Eriko Korhonen/26.4.2021
 //Tämä on vielä kesken/28.-30.4.2021
 //Selectors
-const listaInput = document.querySelector(".lista-input");
+const listaInput = document.getElementById("lista-input");
 const listaButton = document.querySelector(".lista-button");
 const tehtavaLista = document.querySelector(".tehtava-lista");
 const filterOption = document.querySelector(".filter-todo");
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
-listaButton.addEventListener("click", addLista);
+//submit buttonin event
+listaButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  if(listaInput.value.length > 0) {
+      addLista();
+  } else{
+      alert("Tekstikenttä ei voi olla tyhjä");
+  }
+});
 tehtavaLista.addEventListener("click", deleteCheck); //function deleteCheck
-filterOption.addEventListener("click, filterTodo");
+filterOption.addEventListener("click", filterTodo);
 
 //Functions
-function addLista(event)
+function addLista()
 {
   //console.log('hei');
 
   //Prevent form from submitting
-  event.preventDefault();
+  //event.preventDefault();
 
  //Todo DIV ->
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
+  const listaDiv = document.createElement("div");
+  listaDiv.classList.add("todo");
 
   //Create LI
   const newTodo = document.createElement("li");
-  newTodo.innerText = todoInput.value;
+  newTodo.innerText = listaInput.value;
   newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
+  listaDiv.appendChild(newTodo);
 
   //ADD TODO TO lOCALSTORAGE
-  saveLocalTodos(todoInput.value);
+  saveLocalTodos(listaInput.value);
 
   //CHECK VALMIS BUTTON
   const completedButton = document.createElement("button");
@@ -46,15 +54,15 @@ function addLista(event)
   listaDiv.appendChild(trashButton);
 
   //Liitä TO LIST
-  todoList.appendChild(listaDiv);//<-
+  tehtavaLista.appendChild(listaDiv);//<-
 
   //Poista todoInput Value
-  todoInput.value = "";
+  listaInput.value = "";
 }
 
 function deleteCheck(e)
 {
-//  console.log(e.target);
+  console.log(e.target);
   const item = e.target;
   //DELETE TODO
   if (item.classList[0] === "roska-btn")
@@ -67,20 +75,18 @@ function deleteCheck(e)
     {
     todo.remove();
   });
-
   }
-
   //CHECK MARK
-  if (item.classList[0] === "valmis-btn")
+  if (item.classList[0] === "complete-btn")
   {
     const todo = item.parentElement;
-    todo.classList.toggle("completed");
+    todo.classList.toggle('completed');
   }
 }
 
 function filterTodo(e)
 {
-   const todos = todoList.childNodes;
+   const todos = tehtavaLista.childNodes;
 //  console.log(todos);
    todos.forEach(function(todo)
   {
@@ -152,7 +158,7 @@ function getTodos()
 
          //Create LI
          const newTodo = document.createElement("li");
-         newTodo.innerText = todoInput.value;
+         newTodo.innerText =listaInput.value;
          newTodo.classList.add("todo-item");
          todoDiv.appendChild(newTodo);
 
@@ -163,16 +169,16 @@ function getTodos()
          const completedButton = document.createElement("button");
          completedButton.innerHTML = '<i class="fas fa-check"></i>';
          completedButton.classList.add("complete-btn");
-         listaDiv.appendChild(completedButton);
+         todoDiv.appendChild(completedButton);
 
          //CHECK trash BUTTON
          const trashButton = document.createElement("button");
          trashButton.innerHTML = '<i class="fas fa-trash"></i>';
          trashButton.classList.add("roska-btn");
-         listaDiv.appendChild(trashButton);
+         todoDiv.appendChild(trashButton);
 
          //Liitä TO LIST
-         todoList.appendChild(listaDiv);
+         tehtavaLista.appendChild(listaDiv);
       });
  }
 
