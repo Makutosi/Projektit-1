@@ -6,6 +6,8 @@ var canv = document.createElement("canvas") ---> const canv = document.getElemen
 Jotta verrataan suoraan jo html-tiedostossa luotuun canvasiin, eikä tarvitse luoda uutta.
 Lisäsin myös brick objektin ja funktiot jotta saadaan brick-blockit tulostumaan pelialueelle.
 Pituuksia, offsetteja ja värejä voi kokeilla ja säätää riveiltä 32-42.
+
+12.5.2021 RIKU KAARTOAHO - Lisäsin brick-kuvat ja muutin hieman offset-arvoja.
 */
 
 //=========================================================================================
@@ -24,18 +26,20 @@ const canv = document.getElementById("breakout");
 // set up the context
 const ctx = canv.getContext("2d");
 
-// BG IMAGE
+// tuodaan kuvat
 const BG_IMG = new Image();
 BG_IMG.src = "assets/background-img3.jpg"; // kokeilu
+const red_brick = new Image();
+red_brick.src = "assets/red_tile3.png";
 
 //luodaan brick olio joka sisältää kaikki brickien oletus määritteet.
 const brick = {
   row : 4,
   column: 5,
-  width: 75,
-  height: 20,
-  offSetLeft : 38,
-  offSetTop : 20,
+  width: 80,
+  height: 22,
+  offSetLeft : 33,
+  offSetTop : 18,
   marginTop : 20,
   fillColor : "#b90015",
   strokeColor : "#000"
@@ -62,11 +66,7 @@ function drawBricks() {
       for(let c = 0; c < brick.column; c++) {
           let b = bricks[r][c];
       if(b.status){
-          ctx.fillStyle = brick.fillColor;
-          ctx.fillRect(b.x, b.y, brick.width, brick.height)
-
-          ctx.strokeStyle = brick.strokeColor;
-          ctx.strokeRect(b.x, b.y, brick.width, brick.height);
+          ctx.drawImage(red_brick, b.x, b.y, brick.width, brick.height);
           }
       }
   }
@@ -100,7 +100,6 @@ function update() {
 //Pelin draw funktio, joka tulostaa kaiken halutun tiedon canvasiin. Kuten pallot, paddlet ja brickit.
 function draw() {
   drawBricks();
-
 }
 
 //pelin loop funktio
